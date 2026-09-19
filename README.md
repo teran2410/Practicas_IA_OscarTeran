@@ -7,8 +7,8 @@ Los resultados fueron bastante buenos. Con un árbol pequeño y fácil de leer o
 **Sí, cumple adecuadamente.**
 
 ### Justificación:
-* **Estructura de los datos:** Cuenta con características numéricas continuas (como el nivel de alcohol, los flavonoides y la intensidad del color) que permiten definir cortes exactos para las ramas del árbol[cite: 1].
-* **Variable objetivo definida:** Las clases de vino están perfectamente separadas en tres categorías (0, 1 y 2), lo que evita confusiones al momento de clasificar[cite: 1].
+* **Estructura de los datos:** Cuenta con características numéricas continuas (como el nivel de alcohol, los flavonoides y la intensidad del color) que permiten definir cortes exactos para las ramas del árbol.
+* **Variable objetivo definida:** Las clases de vino están perfectamente separadas en tres categorías (0, 1 y 2), lo que evita confusiones al momento de clasificar.
 
 ### Características fundamentales y posibles adiciones:
 * **Las más importantes:** La intensidad del color (`color_intensity`) y los flavonoides resultaron ser claves en los primeros niveles porque separan los grupos principales con mucha claridad.
