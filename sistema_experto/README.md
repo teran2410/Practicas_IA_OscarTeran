@@ -1,15 +1,54 @@
-# Práctica: Clasificación con Árbol de Decisión (Wine Dataset)
+# Sistema Experto de Diagnóstico Médico Simple
 
-## Opiniones de los resultados
-Los resultados fueron bastante buenos. Con un árbol pequeño y fácil de leer obtuvimos una precisión sólida, y al dejar que el árbol creciera más, el porcentaje de aciertos mejoró y se notó. Lo interesante de este modelo es que transforma datos de laboratorio en reglas lógicas muy claras ("si pasa esto, entonces es este tipo de vino"), lo cual facilita entender cómo toma decisiones.
+Este proyecto implementa un sistema experto basado en reglas con encadenamiento hacia
+adelante (*forward chaining*) utilizando Python y la librería `experta`. El objetivo del
+sistema es realizar diagnósticos médicos sencillos a partir de un conjunto de síntomas
+ingresados.
 
-## ¿El dataset cumple con los requerimientos para un árbol de decisiones?
-**Sí, cumple adecuadamente.**
+## Requisitos Previos
 
-### Justificación:
-* **Estructura de los datos:** Cuenta con características numéricas continuas (como el nivel de alcohol, los flavonoides y la intensidad del color) que permiten definir cortes exactos para las ramas del árbol.
-* **Variable objetivo definida:** Las clases de vino están perfectamente separadas en tres categorías (0, 1 y 2), lo que evita confusiones al momento de clasificar.
+- **Python 3.x**
+- **Git**
 
-### Características fundamentales y posibles adiciones:
-* **Las más importantes:** La intensidad del color (`color_intensity`) y los flavonoides resultaron ser claves en los primeros niveles porque separan los grupos principales con mucha claridad.
-* **Características extra:** Se podrían añadir variables relacionadas con el contenido total de polifenoles o la acidez total para ver si el árbol logra refinar aún más sus divisiones.
+## Instalación
+
+1. **Clonar el repositorio:**
+
+```bash
+git clone <URL_DE_TU_REPOSITORIO>
+cd <NOMBRE_DE_LA_CARPETA>
+```
+
+2. **Crear y activar un entorno virtual (opcional pero recomendado):**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # En Linux/Mac
+# venv\Scripts\activate   # En Windows
+```
+
+3. **Instalar las dependencias:**
+
+```bash
+pip install experta
+```
+
+## Ejecución del Proyecto
+
+Para correr la suite completa de pruebas (Casos de prueba 1 al 5 y pruebas del sistema ampliado):
+
+```bash
+python3 main.py
+```
+
+## Estructura del Código
+
+- **`sistema_experto.py`**: Contiene la definición de hechos (`Sintoma`, `Diagnostico`)
+	y el motor de inferencia `SistemaExpertoDiagnostico` con todas las reglas de
+	diagnóstico y la regla de respaldo.
+
+Otros archivos:
+
+- `main.py`: Runner con casos de prueba y ejemplos de uso.
+- `ejercicio2.py`: Ejercicios y pruebas adicionales.
+- `reflexion.md`: Reflexión sobre la práctica.
