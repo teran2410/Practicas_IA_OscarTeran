@@ -1,76 +1,15 @@
-# Sistema Experto de Diagnóstico Médico Simple
+# Práctica: Clasificación con Árbol de Decisión (Wine Dataset)
 
-Pequeño sistema experto basado en reglas (encadenamiento hacia adelante) para ilustrar
-cómo usar la librería `experta` en Python para diagnosticar condiciones médicas
-sencillas a partir de síntomas proporcionados.
+## Opiniones de los resultados
+Los resultados fueron bastante buenos. Con un árbol pequeño y fácil de leer obtuvimos una precisión sólida, y al dejar que el árbol creciera más, el porcentaje de aciertos mejoró y se notó. Lo interesante de este modelo es que transforma datos de laboratorio en reglas lógicas muy claras ("si pasa esto, entonces es este tipo de vino"), lo cual facilita entender cómo toma decisiones.
 
-## Contenido rápido
-- Diagnóstico automático usando reglas.
-- Casos de prueba incluidos para validar las reglas básicas.
-- Código claro y comentado para fines educativos.
+## ¿El dataset cumple con los requerimientos para un árbol de decisiones?
+**Sí, cumple adecuadamente.**
 
-## Requisitos
-- Python 3.8 o superior
-- pip
+### Justificación:
+* **Estructura de los datos:** Cuenta con características numéricas continuas (como el nivel de alcohol, los flavonoides y la intensidad del color) que permiten definir cortes exactos para las ramas del árbol.
+* **Variable objetivo definida:** Las clases de vino están perfectamente separadas en tres categorías (0, 1 y 2), lo que evita confusiones al momento de clasificar.
 
-Opcionalmente se recomienda trabajar dentro de un entorno virtual.
-
-## Instalación
-1. Clona el repositorio:
-
-```bash
-git clone <URL_DE_TU_REPOSITORIO>
-cd <NOMBRE_DE_LA_CARPETA>
-```
-
-2. (Opcional) crea y activa un entorno virtual:
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-3. Instala la dependencia principal:
-
-```bash
-pip install experta
-```
-
-## Uso
-Ejecuta el script principal que contiene los casos de prueba y ejemplos de ejecución:
-
-```bash
-python3 main.py
-```
-
-`main.py` ejecuta la suite de pruebas predefinida (Casos 1–5). Para usar el motor
-de forma interactiva, importa `SistemaExpertoDiagnostico` desde `sistema_experto.py`
-y crea un objeto con los hechos (síntomas) que quieras evaluar.
-
-## Ejemplos rápidos
-- Ejecutar la suite de pruebas:
-
-```bash
-python3 main.py
-```
-
-- Ejecutar un ejemplo desde intérprete o script:
-
-```python
-from sistema_experto import SistemaExpertoDiagnostico
-
-engine = SistemaExpertoDiagnostico()
-engine.reset()
-engine.declare(Sintoma(nombre='fiebre'))
-engine.run()
-```
-
-## Estructura del proyecto
-- [sistema_experto.py](sistema%20experto/sistema_experto.py): Definición de hechos y motor de inferencia.
-- [main.py](sistema%20experto/main.py): Runner con casos de prueba y ejemplos.
-- [ejercicio2.py](sistema%20experto/ejercicio2.py): Ejercicios adicionales / pruebas.
-- [README.md](sistema%20experto/README.md): Este documento.
-
-## Pruebas y validación
-`main.py` incluye una serie de casos de prueba que sirven para validar el comportamiento
-de las reglas. Ejecuta `python3 main.py` y revisa la salida para verificar los diagnósticos.
+### Características fundamentales y posibles adiciones:
+* **Las más importantes:** La intensidad del color (`color_intensity`) y los flavonoides resultaron ser claves en los primeros niveles porque separan los grupos principales con mucha claridad.
+* **Características extra:** Se podrían añadir variables relacionadas con el contenido total de polifenoles o la acidez total para ver si el árbol logra refinar aún más sus divisiones.
